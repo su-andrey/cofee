@@ -1,0 +1,3 @@
+sqlite3
+sys
+PyQt5(QApplication, QMainWindow, QTableWidgetItem, QtCore, QtWidgets)
