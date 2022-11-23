@@ -3,14 +3,14 @@ import sys
 
 
 from PyQt5.QtWidgets import QApplication, QMainWindow, QTableWidgetItem
-from design import Ui_MainWindow
+from PyQt5 import uic
 
-class Main(Ui_MainWindow, QMainWindow):
+class Main(QMainWindow):
     def __init__(self):
-        super().__init__()
+        super(Main, self).__init__()
+        uic.loadUi('design.ui', self)
         con = sqlite3.connect("cofee.sqlite")
         cur = con.cursor()
-        self.setupUi(self)
         self.tableWidget.setColumnCount(5)
         self.tableWidget.setRowCount(0)
         res = cur.execute("""SELECT id, name, degree, type, taste, price, size FROM info""").fetchall()
