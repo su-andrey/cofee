@@ -1,7 +1,7 @@
 import sqlite3
 import sys
 from PyQt5 import uic
-from PyQt5.QtWidgets import QApplication, QMainWindow, QTableWidgetItem
+from PyQt5.QtWidgets import QApplication, QMainWindow, QTableWidgetItem, QWidget
 
 
 class AnotherWindow(QMainWindow):
