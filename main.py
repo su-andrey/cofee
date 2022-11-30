@@ -10,7 +10,7 @@ class AnotherWindow(QMainWindow, Ui_MainWindow_2):
         super().__init__()
         self.setupUi(self)
         self.pushButton.clicked.connect(self.change)
-        self.con = sqlite3.connect('data\cofee.sqlite')
+        self.con = sqlite3.connect("data\cofee.sqlite")
         self.cur = self.con.cursor()
 
     def change(self):

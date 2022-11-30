@@ -16,7 +16,7 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName('MainWindow')
         MainWindow.resize(800, 600)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
-        self.centralwidget.setObjectName("centralwidget")
+        self.centralwidget.setObjectName('centralwidget')
         self.tableWidget = QtWidgets.QTableWidget(self.centralwidget)
         self.tableWidget.setGeometry(QtCore.QRect(0, 140, 791, 431))
         self.tableWidget.setObjectName("tableWidget")
