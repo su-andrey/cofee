@@ -1,15 +1,16 @@
 import sqlite3
 import sys
-from PyQt5 import uic
-from PyQt5.QtWidgets import QApplication, QMainWindow, QTableWidgetItem, QWidget
+from PyQt5.QtWidgets import QApplication, QMainWindow, QTableWidgetItem
+from design import Ui_MainWindow
+from addEditCoffeeForm import Ui_MainWindow_2
 
 
-class AnotherWindow(QMainWindow):
+class AnotherWindow(QMainWindow, Ui_MainWindow_2):
     def __init__(self):
-        super(AnotherWindow, self).__init__()
-        uic.loadUi('addEditCoffeeForm.ui', self)
+        super().__init__()
+        self.setupUi(self)
         self.pushButton.clicked.connect(self.change)
-        self.con = sqlite3.connect('cofee.sqlite')
+        self.con = sqlite3.connect('data\cofee.sqlite')
         self.cur = self.con.cursor()
 
     def change(self):
@@ -29,11 +30,11 @@ class AnotherWindow(QMainWindow):
         self.close()
 
 
-class MainWindow(QMainWindow):
+class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
-        super(MainWindow, self).__init__()
-        uic.loadUi('design.ui', self)
-        self.con = sqlite3.connect("cofee.sqlite")
+        super() .__init__()
+        self.setupUi(self)
+        self.con = sqlite3.connect("data\cofee.sqlite")
         self.cur = self.con.cursor()
         self.tableWidget.setColumnCount(7)
         self.tableWidget.setRowCount(0)
